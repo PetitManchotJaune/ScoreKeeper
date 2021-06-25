@@ -38,7 +38,6 @@ p2.button.addEventListener('click', () => {
     updateScores(p2, p1);
 })
 
-// (Arrow function don't bind to 'this' keyword)
 winningScoreSelect.addEventListener('change', function () {
     winningScore = parseInt(this.value);
     reset();
@@ -48,12 +47,12 @@ resetBtn.addEventListener('click', reset);
 
 function reset() {
     isGameOver = false;
-    p1Score = 0;
-    p2Score = 0;
-    p1Display.textContent = 0;
-    p2Display.textContent = 0;
-    p1Display.classList.remove('has-text-success', 'has-text-danger');
-    p2Display.classList.remove('has-text-success', 'has-text-danger');
-    p1Btn.disabled = false;
-    p2Btn.disabled = false;
+    p1.score = 0;
+    p2.score = 0;
+    p1.display.textContent = 0;
+    p2.display.textContent = 0;
+    p1.display.classList.remove('has-text-success', 'has-text-danger');
+    p2.display.classList.remove('has-text-success', 'has-text-danger');
+    p1.button.disabled = false;
+    p2.button.disabled = false;
 }
